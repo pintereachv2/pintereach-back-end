@@ -2,11 +2,12 @@
 
 Backend portion of the pintereach application with endpoints and jwt.
 
-
-| Methods  | Endpoints |
+# Endpoints
+| Method  | Endpoints |
 | ------------- | ------------- |
-| REGISTER  | POST  | /api/register  |
-| LOGIN  | /api/login |
+| POST  | /api/register|
+| POST  | /api/login  |
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
