@@ -9,7 +9,7 @@ https://pintereacher.herokuapp.com
 | For | Method  | Endpoints |
 | ------------- | ------------- | ------------- |
 | Register  | POST  | /api/register|
-| Login  | /api/login  |
+| Login  |   POST |/api/login
 
 
 ## License
