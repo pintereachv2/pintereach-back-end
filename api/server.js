@@ -6,6 +6,11 @@ const authRouter = require('../auth/auth-routes.js')
 
 const server = express();
 
+// test endpoint
+server.get('/', (req, res) => {
+  res.status(200).json({'message': 'server up!'})
+})
+
 server.use(helmet());
 server.use(cors());
 server.use(express.json());
