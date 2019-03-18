@@ -2,7 +2,7 @@
 
 Backend portion of the pintereach application with endpoints and jwt.
 
-#Server 
+# Server 
 https://pintereacher.herokuapp.com
 
 # Endpoints
