@@ -1,4 +1,4 @@
-# pintereach-back-end
+# Pintereach-back-end
 
 Backend portion of the pintereach application with endpoints and jwt.
 
@@ -9,7 +9,10 @@ https://pintereacher.herokuapp.com
 | For | Method  | Endpoints |
 | ------------- | ------------- | ------------- |
 | Register  | POST  | /api/register|
-| Login  |   POST |/api/login
+| Login  |   POST | /api/login |
+| Create |   POST |  |
+| Update  |  PUT | |
+| Delete  |  DELETE | |
 
 
 ## License
