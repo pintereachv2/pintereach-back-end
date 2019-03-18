@@ -2,11 +2,14 @@
 
 Backend portion of the pintereach application with endpoints and jwt.
 
+#Server 
+https://pintereacher.herokuapp.com
+
 # Endpoints
-| Method  | Endpoints |
+| For | Method  | Endpoints |
 | ------------- | ------------- |
-| POST  | /api/register|
-| POST  | /api/login  |
+| Register  | POST  | /api/register|
+| Login  | /api/login  |
 
 
 ## License
