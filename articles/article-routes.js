@@ -30,7 +30,21 @@ articleRouter.post('/articles', (req, res) => {
     })
   })
 
-
+  articleRouter.delete('/articles/:id', (req, res) => {
+    const {id} = req.params;
+    db.
+    remove(id)
+    .then(article => {
+        if (article) {
+            res.status(204).end();
+        } else {
+            res.status(404).json({ success: false, message: "The article with the specified ID does not exist." });
+        }
+    })
+        .catch(err => {
+            res.status(500).json({ error: "The article could not be removed" })  
+    })
+})
 
 
 
