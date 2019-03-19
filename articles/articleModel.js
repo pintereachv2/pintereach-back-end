@@ -3,6 +3,7 @@ const db = require('../data/dbConfig.js');
 module.exports = {
     find,
     findById,
+    getArticleList,
     insert,
     update,
     remove,
@@ -17,6 +18,13 @@ module.exports = {
   }
 
 
+  function getArticleList(userId) {
+    return db('articles')
+      .join('users ', 'users.id', 'articles.user_id')
+      .select('articles.id', 'articles.title', 'articles.content', 'articles.abstract', 'articles.image', 'articles.category', 'users.username')
+      .where('articles.user_id', userId);
+  }
+  
 
   function insert(article) {
     return db('articles')

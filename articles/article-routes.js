@@ -2,7 +2,7 @@ const articleRouter = require('express').Router();
 
 const { authenticate } = require('../auth/authenticate');
 const db = require('./articleModel.js');
-// const dbs = require('../api/user-model.js');
+
 
 
 //CRUD OPERATIONS 
@@ -48,7 +48,7 @@ articleRouter.post('/articles', (req, res) => {
     })
 })
 
-// Put 
+// PUT 
 articleRouter.put('/articles/:id', (req, res) => {
     const { id } = req.params;
     const changes = req.body;
@@ -71,12 +71,23 @@ articleRouter.put('/articles/:id', (req, res) => {
 })
 
 
-
-// articleRouter.get('/:id', (req, res) => {
-//     const id = req.params.id
-
+//GET FOR A SPECIFIC USER 
+//IN REACT PORTION THE ID WILL BE DYNAMIC 
+articleRouter.get('/:id/articles', authenticate, (req, res) => {
+    const id = req.params.id
+        db.getArticleList(id)
+        .then(userArticle => {
+            if(userArticle.length > 0) {
+                res.status(200).json(userArticle)
+            } else {
+                res.status(404).json({message: 'no articles found on user'})
+            } 
+        
+        })
+        .catch(err => {
+            res.status(500).json({  success: false, error: 'error retrieving id'})
+        })
     
-    
-//   });
+  });
 
 module.exports = articleRouter;
