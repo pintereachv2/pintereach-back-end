@@ -15,16 +15,9 @@ module.exports = {
   function findById(id) {
     return db('articles').where({ id: Number(id) });
   }
-  function getArticleList(id) {
-    return db('')
-      .join("recipes", "recipe_id", "Ingredients in Recipes.recipe_id")
-      .select(
-        "Ingredients in Recipes.quantity",
-        "Ingredients in Recipes.ingredient"
-      )
-      .where("Ingredients in Recipes.recipe_id", id);
-  }
-  
+
+
+
   function insert(article) {
     return db('articles')
       .insert(article)
