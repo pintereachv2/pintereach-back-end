@@ -10,9 +10,11 @@ https://pintereacher.herokuapp.com
 | ------------- | ------------- | ------------- |
 | Register  | POST  | /api/register|
 | Login  |   POST | /api/login |
-| Create |   POST |  |
-| Update  |  PUT | |
-| Delete  |  DELETE | |
+| Articles  | GET | /api/articles |
+| Users Articles  | GET | /api/articles/:id |
+| Create |   POST | /api/articles |
+| Update  |  PUT | /api/articles/:id |
+| Delete  |  DELETE | /api/articles/:id |
 
 
 ## License
