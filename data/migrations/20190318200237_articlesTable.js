@@ -9,6 +9,11 @@ exports.up = function(knex, Promise) {
     articles
        .text('content', 255)
        .notNullable();
+    articles
+       .integer("user_id")
+       .unsigned()
+       .references("id")
+       .inTable("users");
     //relationship to the board id
     articles
       .integer("board_id")
@@ -17,7 +22,7 @@ exports.up = function(knex, Promise) {
       .inTable("boards");
     //optional additions
     articles
-        .string('abstract', 255); //for extra details on 
+        .string('abstract', 255); //for extra details on article 
     articles
         .text('image', 128); //adding image placement for react portion 
     articles
