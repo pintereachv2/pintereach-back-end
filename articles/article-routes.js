@@ -1,6 +1,6 @@
 const articleRouter = require('express').Router();
 
-const authenticate  = require('../auth/authenticate');
+const { authenticate } = require('../auth/authenticate');
 const db = require('./articleModel.js');
 // const dbs = require('../api/user-model.js');
 
@@ -8,7 +8,7 @@ const db = require('./articleModel.js');
 //CRUD OPERATIONS 
 
 //GET ARTICLES
-articleRouter.get('/articles', (req, res) => {
+articleRouter.get('/articles', authenticate, (req, res) => {
     db.find()
     .then(article => {
         res.status(200).json(article);
@@ -18,6 +18,7 @@ articleRouter.get('/articles', (req, res) => {
     })
 })
 
+//POST ARTICLES
 articleRouter.post('/articles', (req, res) => {
     let name = req.body
     db
@@ -30,6 +31,7 @@ articleRouter.post('/articles', (req, res) => {
     })
   })
 
+  //DELETE ARTICLES
   articleRouter.delete('/articles/:id', (req, res) => {
     const {id} = req.params;
     db.
@@ -43,6 +45,28 @@ articleRouter.post('/articles', (req, res) => {
     })
         .catch(err => {
             res.status(500).json({ error: "The article could not be removed" })  
+    })
+})
+
+// Put 
+articleRouter.put('/articles/:id', (req, res) => {
+    const { id } = req.params;
+    const changes = req.body;
+
+    db.update(id, changes)
+    .then(articleUpdate => {
+        if( !articleUpdate) {
+            res.status(404).json({ success: false, message: 'The article with the specified ID does not exist.' })
+        }  else if ( !changes ) {
+            return res.status(400).json({  success: false, errorMessage: 'Please provide info for the article.' })
+
+        }
+         else {
+            return res.status(200).json({ success: true, changes })
+        }
+    })
+    .catch(err => {
+        res.status(500).json({  success: false, error: 'The article information could not be modified'})
     })
 })
 
