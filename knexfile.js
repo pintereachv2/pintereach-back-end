@@ -23,3 +23,20 @@ module.exports = {
     },
   },
 
+
+  production: {
+    client: 'postgresql',
+    connection: dbConnection
+  },
+  pool: {
+    min: 2,
+    max: 10
+  },
+  migrations: {
+    directory: './data/migrations',
+    tableName: 'dbmigrations'
+  },
+  seeds: {
+    directory: './data/seeds'
+  }
+}
