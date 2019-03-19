@@ -9,27 +9,27 @@ module.exports = {
   };
   
   function find() {
-    return db('posts');
+    return db('articles');
   }
   
   function findById(id) {
-    return db('posts').where({ id: Number(id) });
+    return db('particles').where({ id: Number(id) });
   }
   
-  function insert(post) {
-    return db('posts')
-      .insert(post)
+  function insert(article) {
+    return db('articles')
+      .insert(article)
     //   .then(ids => ({ id: ids[0] }));
   }
   
-  function update(id, post) {
-    return db('posts')
+  function update(id, article) {
+    return db('articles')
       .where('id', Number(id))
-      .update(post);
+      .update(article);
   }
   
   function remove(id) {
-    return db('posts')
+    return db('articles')
       .where('id', Number(id))
       .del();
   }
