@@ -7,7 +7,7 @@ const jwtKey =
   'BWBE';
 
 
-  const Users = require('../api/user-model.js');
+const Users = require('../api/user-model.js');
 
 
 
