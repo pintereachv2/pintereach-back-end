@@ -8,6 +8,9 @@ const jwtKey =
 
 const Users = require('../api/user-model.js');
 
+// authRouter.get('/users', (req, res) => {
+//   Users.find(users)
+// })
 
 authRouter.post('/register', (req, res) => {
   let user = req.body;
@@ -54,7 +57,7 @@ function generateToken(user) {
   };
 
   const options = {
-    expiresIn: '12d',
+    expiresIn: '25d',
   };
 
   return jwt.sign(payload, jwtKey, options);
