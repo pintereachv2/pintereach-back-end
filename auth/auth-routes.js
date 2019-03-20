@@ -6,7 +6,8 @@ const jwtKey =
   process.env.JWT_SECRET ||
   'BWBE';
 
-const Users = require('../api/user-model.js');
+
+  const Users = require('../api/user-model.js');
 
 
 
