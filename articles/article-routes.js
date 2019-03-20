@@ -19,8 +19,9 @@ articleRouter.get('/articles', authenticate,  (req, res) => {
 })
 
 //POST ARTICLES
-articleRouter.post('/articles',  (req, res) => {
-    let name = req.body
+articleRouter.post('/articles', authenticate, (req, res) => {
+    // let name = req.body.user_id
+    // name.user_id = req.decoded.subject
     db
     .insert(name)
     .then(article => {

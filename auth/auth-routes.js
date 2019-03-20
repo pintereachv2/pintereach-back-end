@@ -39,6 +39,7 @@ authRouter.post('/login', (req, res) => {
           message: `${user.username} working...`,
           token,
           username: `${user.username}`,
+          id: user.id
         });
       } else {
         res.status(401).json({ message: 'Invalid Credentials' });
