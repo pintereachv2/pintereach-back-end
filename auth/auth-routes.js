@@ -6,7 +6,9 @@ const jwtKey =
   process.env.JWT_SECRET ||
   'BWBE';
 
-const Users = require('../api/user-model.js');
+
+  const Users = require('../api/user-model.js');
+
 
 
 authRouter.post('/register', (req, res) => {
@@ -54,7 +56,7 @@ function generateToken(user) {
   };
 
   const options = {
-    expiresIn: '12d',
+    expiresIn: '25d',
   };
 
   return jwt.sign(payload, jwtKey, options);

@@ -19,7 +19,7 @@ articleRouter.get('/articles', authenticate, (req, res) => {
 })
 
 //POST ARTICLES
-articleRouter.post('/articles', (req, res) => {
+articleRouter.post('/articles',  (req, res) => {
     let name = req.body
     db
     .insert(name)
@@ -73,7 +73,7 @@ articleRouter.put('/articles/:id', (req, res) => {
 
 //GET FOR A SPECIFIC USER 
 //IN REACT PORTION THE ID WILL BE DYNAMIC 
-articleRouter.get('/:id/articles', authenticate, (req, res) => {
+articleRouter.get('/articles/:id', authenticate, (req, res) => {
     const id = req.params.id
         db.getArticleList(id)
         .then(userArticle => {
