@@ -1,6 +1,6 @@
 const articleRouter = require('express').Router();
 
-// const { authenticate } = require('../auth/authenticate');
+const { authenticate } = require('../auth/authenticate');
 const db = require('./articleModel.js');
 
 
@@ -8,7 +8,7 @@ const db = require('./articleModel.js');
 //CRUD OPERATIONS 
 
 //GET ARTICLES
-articleRouter.get('/articles',  (req, res) => {
+articleRouter.get('/articles', authenticate,  (req, res) => {
     db.find()
     .then(article => {
         res.status(200).json(article);
@@ -73,7 +73,7 @@ articleRouter.put('/articles/:id', (req, res) => {
 
 //GET FOR A SPECIFIC USER 
 //IN REACT PORTION THE ID WILL BE DYNAMIC 
-articleRouter.get('/articles/:id',  (req, res) => {
+articleRouter.get('/articles/:id', authenticate, (req, res) => {
     const id = req.params.id
         db.getArticleList(id)
         .then(userArticle => {
