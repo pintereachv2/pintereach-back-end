@@ -8,9 +8,7 @@ const jwtKey =
 
 const Users = require('../api/user-model.js');
 
-// authRouter.get('/users', (req, res) => {
-//   Users.find(users)
-// })
+
 
 authRouter.post('/register', (req, res) => {
   let user = req.body;
