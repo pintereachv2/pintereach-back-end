@@ -20,7 +20,7 @@ articleRouter.get('/articles', authenticate,  (req, res) => {
 
 //POST ARTICLES
 articleRouter.post('/articles', authenticate, (req, res) => {
-    // let name = req.body.user_id
+    let name = req.body
     // name.user_id = req.decoded.subject
     db
     .insert(name)
