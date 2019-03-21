@@ -7,7 +7,6 @@ const authRouter = require('../auth/auth-routes.js')
 const articleRouter = require('../articles/article-routes.js')
 const { authenticate } = require('../auth/authenticate');
 
-const { authenticate } = require('../auth/authenticate')
 
 const server = express();
 
