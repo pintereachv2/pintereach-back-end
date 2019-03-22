@@ -24,7 +24,7 @@ https://pintereacher.herokuapp.com
 | Login  |   POST | /api/login | Required: username: 'example', password: 'pass'|
 | Articles  | GET | /api/articles | Required: jwt |
 | Users Articles  | GET | /api/articles/users | Required: jwt, Returns articles for the user logged in|
-| Create |   POST | /api/articles | Creates new article for the specific user |
+| Create |   POST | /api/articles | Required: title: 'example' , content: 'www.example.com', Creates new article for the specific user |
 | Update  |  PUT | /api/articles/:id | Updates articles |
 | Delete  |  DELETE | /api/articles/:id | Deletes articles |
 
