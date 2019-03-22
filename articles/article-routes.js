@@ -74,6 +74,7 @@ articleRouter.put('/articles/:id', (req, res) => {
 //GET FOR A SPECIFIC USER 
 //IN REACT PORTION THE ID WILL BE DYNAMIC 
 articleRouter.get('/articles/user', (req, res) => {
+    console.log(req.body.user_id)
     const id = req.body.user_id
         db.getArticleList(id)
         .then(userArticle => {
