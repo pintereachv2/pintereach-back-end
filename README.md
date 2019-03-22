@@ -11,7 +11,7 @@ https://pintereacher.herokuapp.com
 | Register  | POST  | /api/register|
 | Login  |   POST | /api/login |
 | Articles  | GET | /api/articles |
-| Users Articles  | GET | /api/articles/:id |
+| Users Articles  | GET | /api/articles/users |
 | Create |   POST | /api/articles |
 | Update  |  PUT | /api/articles/:id |
 | Delete  |  DELETE | /api/articles/:id |
