@@ -15,11 +15,11 @@ exports.up = function(knex, Promise) {
        .references("id")
        .inTable("users");
     //relationship to the board id
-    articles
-      .integer("board_id")
-      .unsigned()
-      .references("id")
-      .inTable("boards");
+    // articles
+    //   .integer("board_id")
+    //   .unsigned()
+    //   .references("id")
+    //   .inTable("boards");
     //optional additions
     articles
         .string('abstract', 255); //for extra details on article 
