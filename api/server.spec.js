@@ -96,14 +96,7 @@ describe('POST /api/articles', () => {
         });
         });
     })
-    // it('should give a 204 status', () => {
-    //     const data = {title: 'Title', content: 'Content'}
-    //     return request(server).post('/api/articles').send(data)
-    //     return request(server).delete('/api/articles/4')
-    //     .then(res => {
-    //         expect(res.status).toBe(204);
-    //      })
-    // })
+
    
 
 

@@ -14,7 +14,7 @@ articleRouter.get('/articles',   (req, res) => {
         res.status(200).json(article);
     })
     .catch(err => {
-        res.status(err.code).json({ success: false, message: 'The users information could not be retrieved'})
+        res.status(500).json({ success: false, message: 'The users information could not be retrieved'})
     })
 })
 
@@ -73,8 +73,8 @@ articleRouter.put('/articles/:id', (req, res) => {
 
 //GET FOR A SPECIFIC USER 
 //IN REACT PORTION THE ID WILL BE DYNAMIC 
-articleRouter.get('/articles/:id', (req, res) => {
-    const id = req.params.id
+articleRouter.get('/articles/user', (req, res) => {
+    const id = req.body.user_id
         db.getArticleList(id)
         .then(userArticle => {
             if(userArticle.length > 0) {
